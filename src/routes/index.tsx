@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import logoAsset from "@/assets/bln-logo.jpeg.asset.json";
+import blnLogo from "@/assets/bln-logo.png";
 import heroCar from "@/assets/hero-car.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
@@ -92,7 +92,7 @@ function Index() {
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
           <a href="#hero" className="flex items-center gap-3">
             <img
-              src={logoAsset.url}
+              src={blnLogo}
               alt="BLN Detailing"
               className="h-11 w-auto object-contain"
               style={{ filter: "drop-shadow(0 0 12px rgba(212,162,74,0.35))" }}
@@ -451,7 +451,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <img
-              src={logoAsset.url}
+              src={blnLogo}
               alt="BLN Detailing"
               className="h-12 w-auto object-contain"
               style={{ filter: "drop-shadow(0 0 12px rgba(212,162,74,0.35))" }}
