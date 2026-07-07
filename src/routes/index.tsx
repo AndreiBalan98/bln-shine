@@ -2,10 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import blnLogo from "@/assets/bln-logo.png";
 import heroCar from "@/assets/hero-car.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
 import {
   Phone,
   MessageCircle,
@@ -18,6 +14,7 @@ import {
   ShieldCheck,
   Menu,
   X,
+  ImageIcon,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -29,6 +26,8 @@ const PHONE_DISPLAY = "+40 748 433 054";
 const WA_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   "Salut! Aș dori o programare pentru detailing auto.",
 )}`;
+const INSTAGRAM_LINK = "https://www.instagram.com/bln.detailingauto";
+const TIKTOK_LINK = "https://www.tiktok.com";
 
 const services = [
   {
@@ -261,17 +260,13 @@ function Index() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[gallery1, gallery2, gallery3, gallery4].map((src, i) => (
-              <div key={i} className="group relative aspect-square overflow-hidden rounded-2xl border border-border">
-                <img
-                  src={src}
-                  alt={`Detailing rezultat ${i + 1}`}
-                  width={1024}
-                  height={1024}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            {[0, 1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="aspect-square rounded-2xl border border-dashed border-border flex flex-col items-center justify-center gap-2 bg-secondary/20 text-muted-foreground"
+              >
+                <ImageIcon size={28} className="opacity-40" />
+                <span className="text-xs">În curând</span>
               </div>
             ))}
           </div>
@@ -387,10 +382,10 @@ function Index() {
                 <Phone size={20} className="text-primary" /> {PHONE_DISPLAY}
               </a>
               <div className="flex gap-3 mt-2">
-                <a href="#" aria-label="Instagram" className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary/60 hover:text-primary transition-colors">
+                <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary/60 hover:text-primary transition-colors">
                   <Instagram size={18} />
                 </a>
-                <a href="#" aria-label="TikTok" className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary/60 hover:text-primary transition-colors text-sm font-bold">
+                <a href={TIKTOK_LINK} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-primary/60 hover:text-primary transition-colors text-sm font-bold">
                   TT
                 </a>
               </div>
@@ -462,10 +457,10 @@ function Index() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <a href="#" aria-label="Instagram" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/60 hover:text-primary transition-colors">
+            <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/60 hover:text-primary transition-colors">
               <Instagram size={16} />
             </a>
-            <a href="#" aria-label="TikTok" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/60 hover:text-primary transition-colors text-xs font-bold">
+            <a href={TIKTOK_LINK} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/60 hover:text-primary transition-colors text-xs font-bold">
               TT
             </a>
             <a href={`tel:${WHATSAPP_NUMBER}`} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary/60 hover:text-primary transition-colors">
